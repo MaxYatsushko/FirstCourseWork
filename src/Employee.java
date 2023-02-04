@@ -41,4 +41,8 @@ public class Employee {
     public String toString(){
         return "id=" + id + " Сотрудник:" + fullName + " в отделе:" + department + " получает зп:" + salary;
     }
+
+    public String toStringWithoutDepartment(){
+        return "id=" + id + " Сотрудник:" + fullName + " получает зп:" + salary;
+    }
 }
