@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee {
 
     private static int idGenerator = 1;
@@ -44,5 +46,18 @@ public class Employee {
 
     public String toStringWithoutDepartment(){
         return "id=" + id + " Сотрудник:" + fullName + " получает зп:" + salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Double.compare(employee.salary, salary) == 0 && department == employee.department && id == employee.id && Objects.equals(fullName, employee.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, fullName, salary, department);
     }
 }

@@ -27,6 +27,22 @@ public class Main {
 
         printEmployeeWithSalary(true, 56000);
 
+        //hard task
+        System.out.println("Демонстрация задач \"Очень сложно\"");
+        EmployeeBook employeeBook = new EmployeeBook(10);
+        employeeBook.addEmployee(employees[0]);
+        employeeBook.addEmployee(employees[1]);
+        employeeBook.addEmployee(employees[2]);
+        employeeBook.addEmployee(employees[3]);
+        employeeBook.addEmployee(employees[4]);
+        employeeBook.addEmployee(employees[5]);
+        employeeBook.printEmployeesByDepartments();
+
+        employeeBook.removeEmployee(employees[3]);
+        employeeBook.removeEmployee(employees[0]);
+        employeeBook.removeEmployee(employees[1]);
+        employeeBook.printEmployeesByDepartments();
+
     }
 
     private static void printEmployees(){
