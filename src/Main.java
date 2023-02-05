@@ -25,6 +25,8 @@ public class Main {
         printEmployees();
         printFullNames(1);
 
+        printEmployeeWithSalary(true, 56000);
+
     }
 
     private static void printEmployees(){
@@ -183,4 +185,14 @@ public class Main {
         System.out.println("Средняя зарплата в отделе:" + department + " составляет:" + averageSalary);
     }
 
+    //lessSalary - флаг, false - >= salary, true - < salary
+    private static void printEmployeeWithSalary(boolean lessSalary, double salary) {
+
+        System.out.println("Сотрудники с заплатой " + (lessSalary ? "меньше " : "больше или равно ") + salary);
+        for (Employee employee : employees) {
+            if (employee != null && ((lessSalary && employee.getSalary() < salary) || (!lessSalary && employee.getSalary() >= salary))) {
+                System.out.println(employee.toStringWithoutDepartment());
+            }
+        }
+    }
 }
